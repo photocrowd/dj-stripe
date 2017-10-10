@@ -458,6 +458,8 @@ class CurrentSubscription(TimeStampedModel):
     trial_start = models.DateTimeField(null=True, blank=True)
     amount = models.DecimalField(decimal_places=2, max_digits=7)
 
+    trial_due_to_currency_change = models.BooleanField(default=False)
+
     def plan_display(self):
         return djstripe_settings.PAYMENTS_PLANS[self.plan]["name"]
 
