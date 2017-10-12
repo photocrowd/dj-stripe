@@ -179,6 +179,9 @@ class Customer(StripeCustomer):
 
     objects = CustomerManager()
 
+    class Meta:
+        unique_together = ('subscriber', 'currency')
+
     def purge(self):
         try:
             self.stripe_customer.delete()
