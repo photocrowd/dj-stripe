@@ -5,7 +5,6 @@ import json
 
 from django.contrib.auth import logout as auth_logout
 from django.contrib import messages
-from django.core.urlresolvers import reverse_lazy, reverse
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic import DetailView
@@ -13,6 +12,7 @@ from django.views.generic import FormView
 from django.views.generic import TemplateView
 from django.views.generic import View
 from django.utils.encoding import smart_str
+from django.urls import reverse_lazy, reverse
 
 from braces.views import CsrfExemptMixin
 from braces.views import FormValidMessageMixin
